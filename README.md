@@ -4,14 +4,15 @@
 Feladat:
 Ez Spring boot alkalmazás, ami chat funkciót lát el két fél között, valamint részletes keresést valósít meg elasticsearch-el. Keresést metadataban, chat history-ban gondoltam.
 
-Backend: 
+**Backend:**
   - Spring boot 2.2.5
   - Java 11
   - maven
 
-Dolgozat - LaTeX
+**Dolgozat** - LaTeX
 
-Frontend - ?
+**Frontend** - ?
 
-Készítette: Vécsi Ádám - Mérnökinformatikus MSc
-Témavezető: Dr. Krizsán Zoltán - Egyetemi docens
+**Készítette:** Vécsi Ádám - Mérnökinformatikus MSc
+
+**Témavezető:** Dr. Krizsán Zoltán - Egyetemi docens
