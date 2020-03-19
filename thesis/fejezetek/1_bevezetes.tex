@@ -1,0 +1,22 @@
+% !TEX encoding = UTF-8 Unicode
+
+\Chapter{Bevezetés}
+
+A fényképek és videók készítése napjainkban már teljesen természetessé, megszokottá vált. Ennek köszönhetően népszerűvé váltak azok az eljárások és alkalmazások, melyek segítségével az eredeti felvételből valamilyen stilizált, művészi jellegű képet készíthetünk. Összefoglaló néven ezeket művészi szűrőknek nevezzük.
+
+A dolgozat célja, hogy bemutassa ezen szűrők matematikai hátterét, megvalósítási módját, illetve saját készítésű szűrőket is felvonultasson.
+
+Fiatalok körében eléggé elterjedtek a kép feldolgozással kapcsolatos alkalmazások, gondoljunk csak bele, hogy a napijainkban használatos közösségi alkalmazások mindegyikében megtalálható ez az opció. Akár arc felismeréssel képeken, valós időben és mozgóképeken, vagy akár előre kidolgozott szűrők segítségével, amik elmossák a színeket, kiemelik az éleket vagy valamilyen egyéb módon átalakítják a képeket. Ezekre is ki fogok térni a dolgozatomban.
+% népszerű alkalmazások
+
+Részletezem a különböző képfeldolgozási műveletek matematikai hátterét. Láthatók lesznek, a matematikai leírásoknál példákkal és ábrákkal illusztrálva.
+% matematikai háttér
+
+Saját készítésű szűrőim rajzfilm, ceruza rajz szerű, valamint festmény jellegűek. A szűrőket képekkel lépésről-lépésre mutatom be, továbbá a C++ implementációját is részletezem.
+% saját algoritmusok
+
+Mint említettem szűrőimet C++ programozási nyelven szeretném megírni, OpenCV függvénykönyvtár segítségével. Az OpenCV az egy ingyenes, képfeldolgozási algoritmusokat tartalmazó könyvtár. A dolgozatom során ennek elemeire is kitérek.
+% OpenCV
+
+A dolgozat végén tesztek segítségével megvizsgálom a saját készítésű szűrőket. A tesztek elsősorban a szűrők feldolgozási idejére, valamint az egyes lépések feldolgozási idejére vonatkoznak. A szűrők készítésénél szempont, hogy azokat ne csak statikus képekre, hanem videókra és kameraképre is lehessen alkalmazni. Ezek tesztelésére, egy képkocka per másodperc tesztet használok, amivel kiderül, hogy egy másodperc alatt hány képkockát tudunk előállítani az egyes szűrők esetén.
+% tesztek
