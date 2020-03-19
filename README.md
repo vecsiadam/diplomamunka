@@ -1,7 +1,8 @@
 # Diplomamunka
 #### Meglévő oktatást segítő alkalmazás kibővítése felhasználók közötti csevegéssel és részletes kereséssel
 
-Feladat:
+**Feladat:**
+
 Ez Spring boot alkalmazás, ami chat funkciót lát el két fél között, valamint részletes keresést valósít meg elasticsearch-el. Keresést metadataban, chat history-ban gondoltam.
 
 **Backend:**
