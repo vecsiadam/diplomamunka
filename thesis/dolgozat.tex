@@ -7,11 +7,6 @@
 \usepackage{hyperref}
 
 \usepackage{listings}
-\usepackage{python}
-\usepackage{cpp}
-
-% \usepackage{tikz}
-\usepackage{pgf-pie}
 
 \usepackage{pgfplots}
 \pgfplotsset{width=7cm,compat=1.8}
@@ -25,24 +20,32 @@
 
 \include{cimlap/cimlap}
 
-%\pagestyle{empty}
-%\include{feladatkiiras/feladatkiiras}
+\pagestyle{empty}
+\include{feladatkiiras/feladatkiiras}
 
-%\cleardoublepage
-%\pagenumbering{gobble}
-%\tableofcontents
-%\cleardoublepage
-%\pagenumbering{arabic}
+\cleardoublepage
+\pagenumbering{gobble}
+\tableofcontents
+\cleardoublepage
+\pagenumbering{arabic}
 
-%\newpage
+\newpage
 
-%\linespread{1.2}
-%\pagestyle{fancy}
+\linespread{1.2}
+\pagestyle{fancy}
 
-%\include{fejezetek/1_bevezetes}
+\include{fejezetek/1_bevezetes}
 
-%\include{irodalomjegyzek/irodalom}
+\newpage
+\include{fejezetek/2_kafka}
 
-%\include{hasznalat/hasznalat}
+\newpage
+\include{fejezetek/3_elasticsearch}
+
+\newpage
+\include{irodalomjegyzek/irodalom}
+
+\newpage
+\include{hasznalat/hasznalat}
 
 \end{document}
