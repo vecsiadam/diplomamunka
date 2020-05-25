@@ -1,4 +1,4 @@
-# Diplomamunka
+# Diplomaterv
 #### Meglévő oktatást segítő alkalmazás kibővítése felhasználók közötti csevegéssel és részletes kereséssel
 
 **Feladat:**
@@ -9,6 +9,8 @@ Ez Spring boot alkalmazás, ami chat funkciót lát el két fél között, valam
   - Spring boot 2.2.5
   - Java 11
   - maven
+  - Apache Kafka
+  - Elasticsearch
 
 **Dolgozat** - LaTeX
 
