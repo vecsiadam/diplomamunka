@@ -2,4 +2,30 @@
 
 \Chapter{Elasticsearch}
 
+Az Elasticsearch egy nagyon skálázható, nyílt forrású, teljes szövegű kereső és elemző motor. Ez lehetővé teszi a nagy mennyiségű adat gyors tárolását, keresését és elemzését gyors és szinte valós időben. Általában olyan alkalmazások használják motorként/ technológiaként, amely bonyolult keresési funkciókkal és követelményekkel rendelkeznek. Séma nélküli, néhány alapértelmezett értéket használ az adatok indexeléséhez.
 
+A Relációs adatbázis viszonylag lassan működik hatalmas adatkészletek esetében, ami lassabb keresési eredményeket eredményez az adatbázisból származó lekérdezés esetén. Természetesen az RDBMS optimalizálható, de ez magában foglalja a korlátozások halmazát is, például, hogy minden mezőt nem lehet indexelni, és a sorok frissítése erősen indexált táblázatokba hosszadalmas folyamat.
+
+A vállalkozások manapság alternatív módszereket keresnek, ahol az adatokat olyan módon tárolják, hogy a visszakeresés gyors. Ez úgy érhető el, ha az adatok tárolására az RDBMS helyett NoSQL-t alkalmazunk. Az Elasticsearch egy ilyen NoSQL elosztott adatbázis. Az Elasticsearch rugalmas adatmodelleken alapszik és kis késleltetésű, majdhogy nem valós idejű keresést tesz lehetővé.
+
+
+\Section{Elasticsearch alapvető fogalmak}
+\begin{itemize}
+	\item Közel a valós idejű: Az Elasticsearch közeli valósidejű keresési platform, amely a keresést olyan gyorsan hajtja végre, mint amikor egy dokumentumot indexel.
+	\item Klaszter: A klaszter egy vagy több csomópont gyűjteménye, amely együttesen a teljes adatot tárolja. Egyesített indexelési és keresési képességeket biztosít minden csomópontban, és egyedi névvel azonosítják (alapértelmezés szerint „elasticsearch”).
+	\item Csomópont: A csomópont egyetlen kiszolgáló, amely a klaszter része, adatokat tárol és részt vesz a klaszter indexelés és keresésben.
+	\item Index: Az index olyan dokumentumok gyűjteménye, amelyek hasonló tulajdonságokkal rendelkeznek, és névvel azonosíthatók. Ez a név hivatkozik az indexre, miközben indexeli, keres, frissít és töröl műveleteket a benne lévő dokumentumok alapján.
+	\item Típus: A típus olyan index logikai típusa, amelynek szemantikája komplett. Ez a dokumentum a közös mezőkből álló dokumentumok számára van meghatározva. meghatározhat egynél több típust az indexében.
+	\item Dokumentum: A dokumentum alapvető információegység, amely indexálható. Ezt JSON-ban mutatják be, amely egy globális internetes adatcsere-formátum.
+	\item Shards: Az elasticsearch lehetővé teszi az index felosztását több darabra, úgynevezett shards-ra. Mindegyik shard önmagában egy teljesen funkcionális és független „index”, amely a klaszter bármelyik csomópontján elhelyezhető.
+	\item Replikák: Az Elasticsearch lehetővé teszi, hogy egy vagy több példányt készítsen az index szeleteiről, amelyeket replikáknak vagy replikáknak hívnak.
+\end{itemize}
+
+\Section{Kibana}
+A Kibana egy adatmegjelenítő és -kezelő eszköz az Elasticsearch számára, amely valós idejű hisztogramokat, vonaldiagramokat, kördiagramokat és térképeket biztosít. Ez lehetővé teszi az Elasticsearch adatok megjelenítését és az Elastic Stack navigálását. Az egyik kérdéssel megválaszthatja, hogy hogyan alakítsa ki az adatait, és megtudja, hová vezet az interaktív megjelenítés. Például, mivel a Kibanát gyakran használják naplóelemzéshez, ez lehetővé teszi a kérdések megválaszolását arról, hogy honnan származnak a webes találatai, a terjesztési URL-ek stb. Ha nem saját alkalmazását épít az Elasticsearch tetején, akkor a Kibana remek módja az indexének keresésére és megjelenítésére egy hatékony és rugalmas felhasználói felülettel. Fontos hátránya azonban, hogy minden megjelenítés csak egyetlen index / index mintázat alapján működhet. Tehát ha szigorúan eltérő adatokkal rendelkező indexekkel rendelkezik, akkor mindegyikhez külön megjelenítést kell létrehoznia. A fejlettebb használati esetekben a Knowi jó lehetőség. Ez lehetővé teszi, hogy az Elasticsearch adatait összekapcsolja több index között, és összekeverje más SQL / NoSQL / REST-API adatforrásokkal, majd vizualizációkat készíthet belőlük egy üzleti felhasználóbarát felhasználói felületen.
+
+\Section{Logstash}
+A Logstash az adatokat összesíti és feldolgozza, és elküldi az Elasticsearch-nek. Ez egy nyílt forráskódú, szerveroldalú adatfeldolgozási folyamat, amely sok forrásból származó adatokat egyidejűleg vesz fel, átalakítja és gyűjtésre továbbítja. Emellett formátumoktól függetlenül átalakítja és előkészíti az adatokat, azonosítva a megnevezett mezőket a struktúra felépítéséhez, és átalakítja azokat egy közös formátumba való konvergáláshoz. Mivel például az adatok gyakran különböző rendszerekben vannak szétszórva, különböző formátumokban, a Logstash lehetővé teszi a különböző rendszerek összekapcsolását, például webszerverek, adatbázisok, Amazon szolgáltatások stb., És az adatok közzétételét bárhol, ahol folyamatos adatfolyamon kell mennie.
+
+\Section{Beats}
+A Beats egy egyszerű, egycélú adatátviteli ügynökök gyűjteménye, amelyeket száz vagy több ezer gép és rendszer adatainak küldésére használnak a Logstash vagy az Elasticsearch számára. Az Beats kiválóan alkalmasak az adatok gyűjtésére, mivel a szerverekre ülhetnek, a tárolókkal együtt, vagy funkcióként telepíthetők, majd az adatokat az Elasticsearchbe központosíthatják. Például a Filebeat ülhet a szerveren, figyelheti a bejövő naplófájlokat, elemzi azokat, és importálhatja az Elasticsearch rendszerbe valós időben.
