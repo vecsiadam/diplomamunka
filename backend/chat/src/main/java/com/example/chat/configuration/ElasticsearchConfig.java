@@ -19,7 +19,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.example.chat.repository")
-// @ComponentScan(basePackages = { "com.example.chat..service" })
+// @ComponentScan(basePackages = { "com.example.chat.service" })
 public class ElasticsearchConfig {
 
 	@Value("${chat.elasticsearch.url:localhost:9200}")
@@ -27,9 +27,7 @@ public class ElasticsearchConfig {
 
 	@Bean
 	public RestHighLevelClient client() {
-		ClientConfiguration clientConfiguration = ClientConfiguration.builder().connectedTo(this.elasticsearchUrl)
-				.build();
-
+		ClientConfiguration clientConfiguration = ClientConfiguration.builder().connectedTo(elasticsearchUrl).build();
 		return RestClients.create(clientConfiguration).rest();
 	}
 
