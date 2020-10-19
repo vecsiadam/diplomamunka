@@ -25,10 +25,6 @@ $ docker-compose up -d
 
 | Alkalmazás | Elérés |
 | ---------- | ------ |
-| Elasticsearch | ```sh 
-localhost:9200
-``` |
-| Kibana | ```sh 
-localhost:5601
-``` | |
+| Elasticsearch | localhost:9200 |
+| Kibana | localhost:5601 |
 | Kafka|  |
