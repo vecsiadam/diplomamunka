@@ -13,8 +13,11 @@ Ez Spring boot alkalmazás, ami chat funkciót lát el két fél között, valam
   - Elasticsearch 7.9.2
 
 **Frontend** - ?
+
 **Dolgozat** - LaTeX
+
 **Készítette:** Vécsi Ádám - Mérnökinformatikus MSc
+
 **Témavezető:** Dr. Krizsán Zoltán - Egyetemi docens
 
 ### Docker containerek indítása (Elasticsearch, Kibana)
