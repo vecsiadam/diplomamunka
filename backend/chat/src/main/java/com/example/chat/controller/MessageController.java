@@ -1,5 +1,6 @@
 package com.example.chat.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -47,6 +48,7 @@ public class MessageController {
 		Subject subject = new Subject();
 		user.setSubjects(List.of(subject));
 		message.setSenderUser(user);
+		message.setDateTime(LocalDateTime.now());
 		return messageRepository.save(message);
 	}
 }
