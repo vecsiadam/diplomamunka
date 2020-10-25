@@ -12,10 +12,6 @@ Ez Spring boot alkalmazás, ami chat funkciót lát el két fél között, valam
   - Apache Kafka
   - Elasticsearch 7.9.2
 
-**Frontend** - ?
-
-**Dolgozat** - LaTeX
-
 **Készítette:** Vécsi Ádám - Mérnökinformatikus MSc
 
 **Témavezető:** Dr. Krizsán Zoltán - Egyetemi docens
@@ -30,4 +26,5 @@ $ docker-compose up -d
 | ---------- | ------ |
 | Elasticsearch | localhost:9200 |
 | Kibana | localhost:5601 |
-| Kafka|  |
+| ZooKeeper|  |
+| Kafka Broker 1|  |
