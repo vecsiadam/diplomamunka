@@ -3,13 +3,13 @@
 
 **Feladat:**
 
-Ez Spring boot alkalmazás, ami chat funkciót lát el két fél között, valamint részletes keresést valósít meg elasticsearch-el. Keresést metadataban, chat history-ban gondoltam.
+Spring boot alkalmazás modulok, ami chat funkciót látnak el, egy adott szobába csatlakozhatnak be a userek és cseveghetnek. Részletes keresést valósít meg chat history-ban Elasticsearch segítségével. Az üzenetek küldéséhez és fogadásához Apache Kafka-t használok.
 
 **Backend:**
   - Spring boot 2.3.3.RELEASE
   - Java 11
   - Maven
-  - Apache Kafka 2.5.1.
+  - Apache Kafka 2.5.1
   - Elasticsearch 7.9.2
 
 **Készítette:** Vécsi Ádám - Mérnökinformatikus MSc
