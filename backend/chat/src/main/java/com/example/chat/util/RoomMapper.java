@@ -16,7 +16,7 @@ public final class RoomMapper {
 
 	public static RoomEntity roomToEntity(Room room) {
 		return new RoomEntity(room.getRoomId(), room.getRoomName(), room.getSubjectId(), room.getSubjectName(),
-				room.getDescription());
+				room.getDescription(), null);
 	}
 
 	public static Room entityToRoom(RoomEntity room) {

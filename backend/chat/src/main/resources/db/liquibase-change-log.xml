@@ -32,6 +32,16 @@
 	<changeSet author="adam.vecsi" id="insert_default_data">
 		<sqlFile path="db/data.sql" />
 	</changeSet>
-	
+
+	<changeSet author="adam.vecsi" id="create_message_table">
+		<createTable tableName="message">
+			<column name="message_id" type="uuid" />
+			<column name="room_id" type="bigint" />
+			<column name="user_id" type="bigint" />
+			<column name="message" type="varchar(5000)" />
+			<column name="datetime" type="datetime" />
+		</createTable>
+	</changeSet>
+
 
 </databaseChangeLog>

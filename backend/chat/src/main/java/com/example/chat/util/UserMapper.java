@@ -15,7 +15,8 @@ import lombok.experimental.UtilityClass;
 public final class UserMapper {
 
 	public static UserEntity userToEntity(User user) {
-		return new UserEntity(user.getUserId(), user.getNeptun(), user.getName(), user.getEmail(), user.getRole());
+		return new UserEntity(user.getUserId(), user.getNeptun(), user.getName(), user.getEmail(), user.getRole(),
+				null);
 	}
 
 	public static User entityToUser(UserEntity user) {

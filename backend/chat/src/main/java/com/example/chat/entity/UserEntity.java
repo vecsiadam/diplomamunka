@@ -1,5 +1,7 @@
 package com.example.chat.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -7,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.example.chat.api.model.Role;
@@ -46,4 +49,7 @@ public class UserEntity {
 	@Column(name = "role")
 	@Enumerated(EnumType.STRING)
 	private Role role;
+
+	@OneToMany(mappedBy = "senderUser")
+	private List<DatabaseMessageEntity> messages;
 }

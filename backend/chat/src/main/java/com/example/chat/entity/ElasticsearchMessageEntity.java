@@ -1,4 +1,4 @@
-package com.example.chat.kafka.consumer.entity;
+package com.example.chat.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -8,9 +8,6 @@ import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
-
-import com.example.chat.api.model.Room;
-import com.example.chat.api.model.User;
 
 import lombok.Data;
 
@@ -23,27 +20,20 @@ import lombok.Data;
 
 @Data
 @Document(indexName = "message", shards = 1, replicas = 1)
-// @Entity
-// @Table(name = "message")
-public class MessageEntity {
+public class ElasticsearchMessageEntity {
 
 	@Id
-	// @javax.persistence.Id
-	// @GeneratedValue(strategy = GenerationType.IDENTITY)
-	// @Column(name = "message_id")
 	private UUID messageId;
 
 	@Field(type = FieldType.Nested, includeInParent = true)
-	private Room room;
+	private RoomEntity room;
 
 	@Field(type = FieldType.Nested, includeInParent = true)
-	private User senderUser;
+	private UserEntity senderUser;
 
-	// @Column(name = "message")
 	private String message;
 
 	@Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
-	// @Column(name = "dateTime", columnDefinition = "DATETIME")
 	private LocalDateTime dateTime;
 
 }
