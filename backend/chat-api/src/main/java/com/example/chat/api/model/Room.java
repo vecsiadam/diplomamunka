@@ -1,7 +1,5 @@
 package com.example.chat.api.model;
 
-import java.util.UUID;
-
 import lombok.Data;
 
 /**
@@ -14,11 +12,13 @@ import lombok.Data;
 @Data
 public class Room {
 
-	private UUID roomId;
+	private Long roomId;
 
 	private String roomName;
 
-	private String subject;
+	private String subjectId;
+
+	private String subjectName;
 
 	private String description;
 

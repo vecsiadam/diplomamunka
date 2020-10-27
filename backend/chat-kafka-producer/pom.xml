@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>chat-kafka-producer</artifactId>
-	<name>Kafka Producer Application</name>
+	<name>Chat Kafka Producer Application</name>
 	<description>Kafka Producer application.</description>
 
 

@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.chat.api.model.Room;
+
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -14,11 +16,11 @@ import lombok.RequiredArgsConstructor;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/hello")
-public class HelloController {
+@RequestMapping("/chat")
+public class RoomController {
 
-	@GetMapping
-	public String hello() {
-		return "hello";
+	@GetMapping("/room")
+	public Room getRooms() {
+		return null;
 	}
 }

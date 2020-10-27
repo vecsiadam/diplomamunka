@@ -1,0 +1,37 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd 
+   http://www.liquibase.org/xml/ns/dbchangelog 
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<changeSet author="adam.vecsi" id="create_room_table">
+		<createTable tableName="room">
+			<column autoIncrement="true" name="room_id" type="bigint">
+				<constraints primaryKey="true" primaryKeyName="room_pkey" />
+			</column>
+			<column name="room_name" type="varchar(255)" />
+			<column name="subject_id" type="varchar(255)" />
+			<column name="subject_name" type="varchar(255)" />
+			<column name="description" type="varchar(255)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="adam.vecsi" id="create_user_table">
+		<createTable tableName="user">
+			<column autoIncrement="true" name="user_id" type="bigint">
+				<constraints primaryKey="true" primaryKeyName="user_pkey" />
+			</column>
+			<column name="neptun" type="varchar(255)" />
+			<column name="name" type="varchar(255)" />
+			<column name="email" type="varchar(255)" />
+			<column name="role" type="varchar(255)" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="adam.vecsi" id="insert_default_data">
+		<sqlFile path="db/data.sql" />
+	</changeSet>
+	
+
+</databaseChangeLog>

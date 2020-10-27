@@ -35,7 +35,7 @@ public class MessageController {
 		message.setMessageId(UUID.randomUUID());
 		message.setMessage(messageString);
 		Room room = new Room();
-		room.setRoomId(UUID.randomUUID());
+		room.setRoomId(1L);
 		room.setRoomName("Diplomatervezés II.");
 		message.setRoom(room);
 		User user = new User();
