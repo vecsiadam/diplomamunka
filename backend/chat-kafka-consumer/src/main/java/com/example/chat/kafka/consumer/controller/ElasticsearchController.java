@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.chat.api.model.Role;
 import com.example.chat.api.model.Room;
 import com.example.chat.api.model.User;
-import com.example.chat.kafka.consumer.entity.Message;
-import com.example.chat.kafka.consumer.repository.MessageRepository;
+import com.example.chat.kafka.consumer.entity.MessageEntity;
+import com.example.chat.kafka.consumer.repository.MessageElasticsearchRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,14 +24,14 @@ import lombok.RequiredArgsConstructor;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/message")
-public class MessageController {
+@RequestMapping("/elasticsearch")
+public class ElasticsearchController {
 
-	private final MessageRepository messageRepository;
+	private final MessageElasticsearchRepository messageRepository;
 
-	@PostMapping
-	public Message saveMessage(@RequestParam String messageString) {
-		Message message = new Message();
+	@PostMapping("/message")
+	public MessageEntity saveMessage(@RequestParam String messageString) {
+		MessageEntity message = new MessageEntity();
 		message.setMessageId(UUID.randomUUID());
 		message.setMessage(messageString);
 		Room room = new Room();

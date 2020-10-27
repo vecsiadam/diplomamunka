@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import com.example.chat.kafka.consumer.entity.Message;
+import com.example.chat.kafka.consumer.entity.MessageEntity;
 
 /**
  * TODO: MessageRepository
@@ -12,6 +12,6 @@ import com.example.chat.kafka.consumer.entity.Message;
  * @author Adam Vecsi
  * @since 2020. 10. 19
  */
-public interface MessageRepository extends ElasticsearchRepository<Message, UUID> {
+public interface MessageElasticsearchRepository extends ElasticsearchRepository<MessageEntity, UUID> {
 
 }

@@ -23,9 +23,14 @@ import lombok.Data;
 
 @Data
 @Document(indexName = "message", shards = 1, replicas = 1)
-public class Message {
+// @Entity
+// @Table(name = "message")
+public class MessageEntity {
 
 	@Id
+	// @javax.persistence.Id
+	// @GeneratedValue(strategy = GenerationType.IDENTITY)
+	// @Column(name = "message_id")
 	private UUID messageId;
 
 	@Field(type = FieldType.Nested, includeInParent = true)
@@ -34,9 +39,11 @@ public class Message {
 	@Field(type = FieldType.Nested, includeInParent = true)
 	private User senderUser;
 
+	// @Column(name = "message")
 	private String message;
 
 	@Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
+	// @Column(name = "dateTime", columnDefinition = "DATETIME")
 	private LocalDateTime dateTime;
 
 }
