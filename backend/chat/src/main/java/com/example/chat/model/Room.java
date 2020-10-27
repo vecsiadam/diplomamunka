@@ -18,6 +18,8 @@ public class Room {
 
 	private String roomName;
 
+	private String subject;
+
 	private String description;
 
 }

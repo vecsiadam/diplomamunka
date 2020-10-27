@@ -35,4 +35,5 @@ public class Message {
 
 	@Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dateTime;
+
 }

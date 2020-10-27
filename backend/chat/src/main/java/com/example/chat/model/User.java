@@ -1,7 +1,5 @@
 package com.example.chat.model;
 
-import java.util.List;
-
 import lombok.Data;
 
 /**
@@ -21,7 +19,5 @@ public class User {
 	private String email;
 
 	private Role role;
-
-	private List<Subject> subjects;
 
 }

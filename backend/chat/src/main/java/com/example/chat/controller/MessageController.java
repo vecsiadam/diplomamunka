@@ -1,7 +1,6 @@
 package com.example.chat.controller;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.chat.model.Message;
 import com.example.chat.model.Role;
 import com.example.chat.model.Room;
-import com.example.chat.model.Subject;
 import com.example.chat.model.User;
 import com.example.chat.repository.MessageRepository;
 
@@ -45,8 +43,6 @@ public class MessageController {
 		user.setName("Vécsi Ádám");
 		user.setNeptun("IZBTF9");
 		user.setRole(Role.STUDENT);
-		Subject subject = new Subject();
-		user.setSubjects(List.of(subject));
 		message.setSenderUser(user);
 		message.setDateTime(LocalDateTime.now());
 		return messageRepository.save(message);
