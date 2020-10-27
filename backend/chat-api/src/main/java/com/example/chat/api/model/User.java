@@ -1,6 +1,8 @@
 package com.example.chat.api.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * TODO: User
@@ -10,7 +12,11 @@ import lombok.Data;
  */
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
+
+	private Long userId;
 
 	private String neptun;
 

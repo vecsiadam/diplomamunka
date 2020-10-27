@@ -11,7 +11,9 @@ import javax.persistence.Table;
 
 import com.example.chat.api.model.Role;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * TODO: UserEntity
@@ -23,6 +25,8 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "user")
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserEntity {
 
 	@Id

@@ -1,6 +1,8 @@
 package com.example.chat.api.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * TODO: Room
@@ -10,6 +12,8 @@ import lombok.Data;
  */
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Room {
 
 	private Long roomId;

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.chat.api.model.Room;
-import com.example.chat.service.RoomService;
+import com.example.chat.api.model.User;
+import com.example.chat.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,27 +24,27 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/chat")
-public class RoomController {
+public class UserController {
 
-	private final RoomService roomService;
+	private final UserService userService;
 
-	@GetMapping("/rooms")
-	public List<Room> getRooms() {
-		return roomService.getRooms();
+	@GetMapping("/users")
+	public List<User> getUsers() {
+		return userService.getUsers();
 	}
 
-	@GetMapping("/room")
-	public Room getRoomById(@RequestParam Long roomId) {
-		return roomService.getRoomId(roomId);
+	@GetMapping("/user")
+	public User getUserById(@RequestParam Long userId) {
+		return userService.getUserById(userId);
 	}
 
-	@PostMapping("/room")
-	public void createRoom(@RequestBody Room room) {
-		roomService.createRoom(room);
+	@PostMapping("user")
+	public void createUser(@RequestBody User user) {
+		userService.createUser(user);
 	}
 
-	@DeleteMapping("/room")
-	public void deleteRoomById(@RequestParam Long roomId) {
-		roomService.deleteRoomById(roomId);
+	@DeleteMapping("/user")
+	public void deleteRoomById(@RequestParam Long userId) {
+		userService.deleteUserById(userId);
 	}
 }

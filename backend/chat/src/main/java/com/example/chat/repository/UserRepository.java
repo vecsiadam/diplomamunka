@@ -12,4 +12,12 @@ import com.example.chat.entity.UserEntity;
  */
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
+	/**
+	 * TODO: mit is csinál?
+	 *
+	 * @param userId
+	 * @return
+	 */
+	UserEntity findByUserId(Long userId);
+
 }
