@@ -1,4 +1,4 @@
-package com.example.chat.configuration;
+package com.example.chat.kafka.consumer.configuration;
 
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,10 +1,10 @@
-package com.example.chat.repository;
+package com.example.chat.kafka.consumer.repository;
 
 import java.util.UUID;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import com.example.chat.model.Message;
+import com.example.chat.kafka.consumer.entity.Message;
 
 /**
  * TODO: MessageRepository

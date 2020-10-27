@@ -1,4 +1,4 @@
-package com.example.chat.configuration;
+package com.example.chat.kafka.consumer.configuration;
 
 import java.util.Collections;
 
@@ -27,12 +27,12 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.example.chat.controller"))
+				.apis(RequestHandlerSelectors.basePackage("com.example.chat.kafka.consumer.controller"))
 				.paths(PathSelectors.regex("/.*")).build().apiInfo(this.apiInfo());
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfo("Chat Application API descriptor.", "", "", "",
+		return new ApiInfo("Chat Kafka Consumer API descriptor.", "", "", "",
 				new Contact("Adam VECSI", "", "adamvecsi94@gmail.com"), "License of API", "API license URL",
 				Collections.emptyList());
 	}

@@ -1,4 +1,4 @@
-package com.example.chat.model;
+package com.example.chat.api.model;
 
 /**
  * TODO: Role

@@ -1,4 +1,4 @@
-package com.example.chat.controller;
+package com.example.chat.kafka.consumer.controller;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.chat.model.Message;
-import com.example.chat.model.Role;
-import com.example.chat.model.Room;
-import com.example.chat.model.User;
-import com.example.chat.repository.MessageRepository;
+import com.example.chat.api.model.Role;
+import com.example.chat.api.model.Room;
+import com.example.chat.api.model.User;
+import com.example.chat.kafka.consumer.entity.Message;
+import com.example.chat.kafka.consumer.repository.MessageRepository;
 
 import lombok.RequiredArgsConstructor;
 
