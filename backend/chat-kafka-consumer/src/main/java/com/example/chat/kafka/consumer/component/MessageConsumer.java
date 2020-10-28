@@ -1,7 +1,5 @@
 package com.example.chat.kafka.consumer.component;
 
-import java.util.UUID;
-
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -28,7 +26,7 @@ public class MessageConsumer {
 	private final MessageSaveService messageSaveService;
 
 	@KafkaListener(topics = { "chat-rooms" })
-	public void onMessage(ConsumerRecord<UUID, String> consumerRecord)
+	public void onMessage(ConsumerRecord<Long, String> consumerRecord)
 			throws JsonMappingException, JsonProcessingException {
 		log.info("ConsumerRecord : {}", consumerRecord);
 		messageSaveService.saveMessage(consumerRecord.value());

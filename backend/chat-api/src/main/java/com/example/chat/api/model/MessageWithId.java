@@ -1,6 +1,6 @@
 package com.example.chat.api.model;
 
-import java.time.LocalDateTime;
+import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,14 +16,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Message {
+public class MessageWithId extends Message {
 
-	private Room room;
-
-	private User senderUser;
-
-	private String message;
-
-	private LocalDateTime dateTime;
+	private UUID messageId;
 
 }

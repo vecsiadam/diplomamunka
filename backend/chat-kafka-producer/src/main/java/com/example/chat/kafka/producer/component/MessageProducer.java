@@ -10,6 +10,7 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import com.example.chat.api.model.Message;
+import com.example.chat.api.model.MessageWithId;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,44 +29,51 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class MessageProducer {
 
-	private final KafkaTemplate<UUID, String> kafkaTemplate;
+	private final KafkaTemplate<Long, String> kafkaTemplate;
 
 	private final ObjectMapper objectMapper;
 
 	private final String topic = "chat-rooms";
 
-	public void sendMessage(Message message) throws JsonProcessingException {
-		UUID key = message.getMessageId();
-		String value = objectMapper.writeValueAsString(message);
+	public void sendMessage(Long roomId, Message message) throws JsonProcessingException {
 
-		ProducerRecord<UUID, String> producerRecord = buildProducerRecord(key, value, topic);
-		ListenableFuture<SendResult<UUID, String>> listenableFuture = kafkaTemplate.send(producerRecord);
-		listenableFuture.addCallback(new ListenableFutureCallback<SendResult<UUID, String>>() {
+		MessageWithId messageWithId = new MessageWithId();
+		messageWithId.setMessageId(UUID.randomUUID());
+		messageWithId.setDateTime(message.getDateTime());
+		messageWithId.setMessage(message.getMessage());
+		messageWithId.setRoom(message.getRoom());
+		messageWithId.setSenderUser(message.getSenderUser());
+
+		String value = objectMapper.writeValueAsString(messageWithId);
+
+		ProducerRecord<Long, String> producerRecord = buildProducerRecord(roomId, value, topic);
+		ListenableFuture<SendResult<Long, String>> listenableFuture = kafkaTemplate.send(producerRecord);
+		listenableFuture.addCallback(new ListenableFutureCallback<SendResult<Long, String>>() {
 
 			@Override
-			public void onSuccess(SendResult<UUID, String> result) {
-				handleSuccess(key, value, result);
+			public void onSuccess(SendResult<Long, String> result) {
+				handleSuccess(roomId, value, result);
 			}
 
 			@Override
 			public void onFailure(Throwable ex) {
-				handleFailure(key, value, ex);
+				handleFailure(roomId, value, ex);
 
 			}
 
 		});
 	}
 
-	private ProducerRecord<UUID, String> buildProducerRecord(UUID key, String value, String kafkaTopic) {
+	private ProducerRecord<Long, String> buildProducerRecord(Long key, String value, String kafkaTopic) {
 		return new ProducerRecord<>(kafkaTopic, null, key, value, null);
 	}
 
-	private void handleSuccess(UUID key, String value, SendResult<UUID, String> result) {
+	private void handleSuccess(Long key, String value, SendResult<Long, String> result) {
 		log.info("Message sent successfully for the key: {} and the value is {}, partitions is {}", key, value,
 				result.getRecordMetadata().partition());
 	}
 
-	private void handleFailure(UUID key, String value, Throwable ex) {
+	private void handleFailure(Long key, String value, Throwable ex) {
 		log.error("Error sending message, the exception : {}", ex.getMessage());
 		try {
 			throw ex;

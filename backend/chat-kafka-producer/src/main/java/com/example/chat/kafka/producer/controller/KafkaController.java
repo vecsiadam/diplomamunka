@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.chat.api.model.Message;
@@ -27,8 +28,9 @@ public class KafkaController {
 	private final MessageProducer messageProducer;
 
 	@PostMapping("/message")
-	public ResponseEntity<Message> sendMessage(@RequestBody Message message) throws JsonProcessingException {
-		messageProducer.sendMessage(message);
+	public ResponseEntity<Message> sendMessage(@RequestParam Long roomId, @RequestBody Message message)
+			throws JsonProcessingException {
+		messageProducer.sendMessage(roomId, message);
 		return ResponseEntity.status(HttpStatus.CREATED).body(message);
 	}
 }
