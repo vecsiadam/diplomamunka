@@ -28,6 +28,4 @@ $ docker-compose up -d
 | Kibana | localhost:5601 |
 | ZooKeeper| localhost:2181 |
 | Kafka Broker| localhost:9091 |
-| Chat Kafka Producer Application| localhost:8080|
-| Chat Kafka Consumer Application| localhost:8081|
 | Chat application| localhost:8082|
