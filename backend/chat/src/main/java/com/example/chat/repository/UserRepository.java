@@ -20,4 +20,12 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 	 */
 	UserEntity findByUserId(Long userId);
 
+	/**
+	 * TODO: mit is csinál?
+	 *
+	 * @param userId
+	 * @return
+	 */
+	UserEntity findUserByNeptun(String neptun);
+
 }

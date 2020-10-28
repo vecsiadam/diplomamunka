@@ -1,5 +1,6 @@
 package com.example.chat.service;
 
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.chat.api.service.MessageSaveService;
@@ -30,8 +31,10 @@ public class MessageSaveServiceImpl implements MessageSaveService {
 
 	private final ObjectMapper objectMapper;
 
+	private final SimpMessagingTemplate template;
+
 	@Override
-	public void saveMessage(String value) {
+	public void sendAndSaveMessage(String value) {
 		ElasticsearchMessageEntity elasticsearchMessage;
 		DatabaseMessageEntity jpaMessage;
 		try {
@@ -46,6 +49,7 @@ public class MessageSaveServiceImpl implements MessageSaveService {
 		log.info("Save message in elasticsearch: {}", elasticsearchMessage);
 		jpaRepository.save(jpaMessage);
 		log.info("Save message in db: {}", jpaMessage);
+		template.convertAndSend("/topic/greetings", value);
 
 	}
 

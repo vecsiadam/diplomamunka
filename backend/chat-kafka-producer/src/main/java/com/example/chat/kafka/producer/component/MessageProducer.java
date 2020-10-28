@@ -1,5 +1,6 @@
 package com.example.chat.kafka.producer.component;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -39,7 +40,7 @@ public class MessageProducer {
 
 		MessageWithId messageWithId = new MessageWithId();
 		messageWithId.setMessageId(UUID.randomUUID());
-		messageWithId.setDateTime(message.getDateTime());
+		messageWithId.setDateTime(LocalDateTime.now());
 		messageWithId.setMessage(message.getMessage());
 		messageWithId.setRoom(message.getRoom());
 		messageWithId.setSenderUser(message.getSenderUser());

@@ -13,6 +13,6 @@ public interface MessageSaveService {
 	 *
 	 * @param value
 	 */
-	void saveMessage(String value);
+	void sendAndSaveMessage(String value);
 
 }

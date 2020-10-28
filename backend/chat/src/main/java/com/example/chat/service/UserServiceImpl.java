@@ -47,4 +47,10 @@ public class UserServiceImpl implements UserService {
 
 	}
 
+	@Override
+	public User getUserByNeptun(String neptun) {
+		return UserMapper.entityToUser(userRepository.findUserByNeptun(neptun.toUpperCase()));
+
+	}
+
 }

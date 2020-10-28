@@ -29,6 +29,7 @@ public class MessageConsumer {
 	public void onMessage(ConsumerRecord<Long, String> consumerRecord)
 			throws JsonMappingException, JsonProcessingException {
 		log.info("ConsumerRecord : {}", consumerRecord);
-		messageSaveService.saveMessage(consumerRecord.value());
+		messageSaveService.sendAndSaveMessage(consumerRecord.value());
+
 	}
 }

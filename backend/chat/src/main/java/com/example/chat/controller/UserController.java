@@ -41,6 +41,11 @@ public class UserController {
 		return new ResponseEntity<>(userService.getUserById(userId), HttpStatus.OK);
 	}
 
+	@GetMapping("/user-by-neptun")
+	public ResponseEntity<User> getUserByNeptun(@RequestParam String neptun) {
+		return new ResponseEntity<>(userService.getUserByNeptun(neptun), HttpStatus.OK);
+	}
+
 	@PostMapping("user")
 	public ResponseEntity<Void> createUser(@RequestBody User user) {
 		userService.createUser(user);

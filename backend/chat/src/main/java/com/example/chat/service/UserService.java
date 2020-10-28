@@ -41,4 +41,12 @@ public interface UserService {
 	 */
 	void deleteUserById(Long userId);
 
+	/**
+	 * TODO: mit is csinál?
+	 *
+	 * @param neptun
+	 * @return
+	 */
+	User getUserByNeptun(String neptun);
+
 }

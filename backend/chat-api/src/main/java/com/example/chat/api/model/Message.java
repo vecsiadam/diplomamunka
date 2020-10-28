@@ -1,7 +1,5 @@
 package com.example.chat.api.model;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +21,5 @@ public class Message {
 	private User senderUser;
 
 	private String message;
-
-	private LocalDateTime dateTime;
 
 }
