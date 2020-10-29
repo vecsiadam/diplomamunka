@@ -3,6 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.4.RELEASE</version>
+	</parent>
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.example.chat</groupId>
 	<artifactId>chat-parent</artifactId>
@@ -10,11 +16,12 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Chat Parent</name>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.4.RELEASE</version>
-	</parent>
+	<modules>
+		<module>chat-api</module>
+		<module>chat-kafka-producer</module>
+		<module>chat-kafka-consumer</module>
+		<module>chat</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,15 +29,9 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<java.version>11</java.version>
 		<swagger.version>2.9.2</swagger.version>
+		<start-class>com.example.chat.ChatApplication</start-class>
 		<spring-boot.repackage.skip>true</spring-boot.repackage.skip>
 	</properties>
-
-	<modules>
-		<module>chat-api</module>
-		<module>chat-kafka-producer</module>
-		<module>chat-kafka-consumer</module>
-		<module>chat</module>
-	</modules>
 
 	<dependencies>
 		<dependency>
@@ -41,7 +42,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -66,8 +66,20 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.example.chat.ChatApplication</mainClass>
+				</configuration>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
+
 	</build>
 
 </project>

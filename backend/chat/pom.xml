@@ -11,11 +11,8 @@
 
 	<artifactId>chat</artifactId>
 	<name>Chat Application</name>
+	<packaging>war</packaging>
 	<description>Thesis project.</description>
-
-	<properties>
-		<chat.version>1.0.0-SNAPSHOT</chat.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -37,36 +34,36 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>sockjs-client</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>stomp-websocket</artifactId>
 			<version>2.3.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
 			<version>3.3.7</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
 			<version>3.1.1-1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -101,12 +98,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -115,19 +106,19 @@
 		<dependency>
 			<groupId>com.example.chat</groupId>
 			<artifactId>chat-api</artifactId>
-			<version>${chat.version}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.example.chat</groupId>
 			<artifactId>chat-kafka-producer</artifactId>
-			<version>${chat.version}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.example.chat</groupId>
 			<artifactId>chat-kafka-consumer</artifactId>
-			<version>${chat.version}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -140,5 +131,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
