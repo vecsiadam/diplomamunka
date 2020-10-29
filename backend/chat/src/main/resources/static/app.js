@@ -3,6 +3,11 @@ var stompClient = null;
 
 // Get rooms and put in single select
 $(document).ready(function() {
+	$("#neptunButton").prop("disabled", true);
+	$("#sendButton").prop("disabled", true);
+	$("#disconnectButton").prop("disabled", true);
+	$("#neptun").prop("disabled", true);
+	$("#message").prop("disabled", true);
     $.ajax({
         url: "http://localhost:8082/chat/rooms"
     }).then(function(data) {
@@ -13,7 +18,7 @@ $(document).ready(function() {
 });
 
 // Get neptun code
-var senderUser={};
+var senderUser=null;
 function getNeptunCode() {
 	var neptun = $("#neptun").val();
 	$.ajax({
@@ -25,7 +30,7 @@ function getNeptunCode() {
 }
 
 // Get room code
-var room={};
+var room=null;
 function getRoom() {
 	var roomId = $("#rooms").val();
 	 $.ajax({
@@ -34,6 +39,18 @@ function getRoom() {
 	    	room = data;
 	    });
 	console.log(room)
+}
+
+//Get last 15 messages by room id
+function getLastMessages() {
+	var roomId = $("#rooms").val();
+	 $.ajax({
+	        url: "http://localhost:8082/chat/search/last-5-messages?roomId=" + roomId
+	    }).then(function(data) {
+	    	for(a of data){
+	    		showMessages(a)
+	    	}
+	    });
 }
 
 // send message
@@ -50,17 +67,18 @@ function sendMessage() {
 }
 
 //connect to the socket
-$(document).ready(function connect() {
+function connect() {
 	var socket = new SockJS('/chat-websocket');
 	stompClient = Stomp.over(socket);
 	stompClient.connect({}, function(frame) {
 		setConnected(true);
 		console.log('Connected: ' + frame);
-		stompClient.subscribe('/topic/greetings', function(message) {
+		stompClient.subscribe('/topic/chat/' + room.roomId, function(message) {
 			showMessages(JSON.parse(message.body));
 		});		
 	});
-});
+
+}
 
 function setConnected(connected) {
 	$("#connect").prop("disabled", connected);
@@ -78,20 +96,54 @@ function showMessages(message) {
 	$("#messages").append("<tr><td>" + message.dateTime +": "+message.senderUser.name + ": "+ message.message + "</td></tr>");
 }
 
+function disconnect() {
+    if (stompClient !== null) {
+        stompClient.disconnect();
+    }
+    setConnected(false);
+    console.log("Disconnected");
+}
+
 $(function() {
 	$("form").on('submit', function(e) {
 		e.preventDefault();
 	});
 
-	$("#send").click(function() {
+	$("#sendButton").click(function() {
 		sendMessage();
+		$("#message").val('');
 	});
 	
 	$("#neptunButton").click(function() {
 		getNeptunCode();
+		$("#neptunButton").prop("disabled", true);
+		$("#neptun").prop("disabled", true);
+		$("#message").prop("disabled", false);
+		$("#sendButton").prop("disabled", false);
 	});
 	
 	$("#roomButton").click(function() {
 		getRoom();
+		getLastMessages();
+		connect();
+		$("#neptunButton").prop("disabled", false);
+		$("#neptun").prop("disabled", false);
+		$("#disconnectButton").prop("disabled", false);
+		$("#roomButton").prop("disabled", true);
+		$("#rooms").prop("disabled", true);
+
+	});
+	$("#disconnectButton").click(function() {
+		$("#disconnectButton").prop("disabled", true);
+		$("#roomButton").prop("disabled", false);
+		$("#rooms").prop("disabled", false);
+		$("#neptun").prop("disabled", true);
+		$("#message").prop("disabled", true);
+		$("#sendButton").prop("disabled", true);
+		$("#neptunButton").prop("disabled", true);
+		$("#message").val('');
+		$("#messages").empty();
+		disconnect();
+
 	});
 });

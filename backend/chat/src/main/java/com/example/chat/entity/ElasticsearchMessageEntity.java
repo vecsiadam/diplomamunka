@@ -33,7 +33,7 @@ public class ElasticsearchMessageEntity {
 
 	private String message;
 
-	@Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy-MM-dd HH:mm:ss")
+	@Field(type = FieldType.Date, format = DateFormat.custom, pattern = "uuuu-MM-dd'T'HH:mm:ss.SSSSSSZ")
 	private LocalDateTime dateTime;
 
 }
