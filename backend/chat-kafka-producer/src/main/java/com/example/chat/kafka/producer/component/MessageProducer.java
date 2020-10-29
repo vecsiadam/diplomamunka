@@ -66,7 +66,7 @@ public class MessageProducer {
 	}
 
 	private ProducerRecord<Long, String> buildProducerRecord(Long key, String value, String kafkaTopic) {
-		return new ProducerRecord<>(kafkaTopic, null, key, value, null);
+		return new ProducerRecord<Long, String>(kafkaTopic, null, key, value, null);
 	}
 
 	private void handleSuccess(Long key, String value, SendResult<Long, String> result) {
