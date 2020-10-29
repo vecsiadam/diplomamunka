@@ -2,7 +2,7 @@ package com.example.chat.service;
 
 import java.util.List;
 
-import com.example.chat.api.model.User;
+import com.example.chat.model.User;
 
 /**
  * TODO: UserService

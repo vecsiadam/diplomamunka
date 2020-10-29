@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.example.chat.api.model.Room;
+import com.example.chat.model.Room;
 import com.example.chat.repository.RoomRepository;
 import com.example.chat.util.RoomMapper;
 

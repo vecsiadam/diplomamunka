@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.example.chat.api.model.Role;
+import com.example.chat.model.Role;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
