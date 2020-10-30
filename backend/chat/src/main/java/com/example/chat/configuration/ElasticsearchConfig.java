@@ -19,10 +19,9 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.example.chat.repository")
-// @ComponentScan(basePackages = { "com.example.chat.service" })
 public class ElasticsearchConfig {
 
-	@Value("${chat.elasticsearch.url:localhost:9200}")
+	@Value("${chat.elasticsearch.url}")
 	private String elasticsearchUrl;
 
 	@Bean

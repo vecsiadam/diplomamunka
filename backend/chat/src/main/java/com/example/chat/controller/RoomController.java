@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.chat.api.model.Room;
+import com.example.chat.model.Room;
 import com.example.chat.service.RoomService;
 
 import lombok.RequiredArgsConstructor;

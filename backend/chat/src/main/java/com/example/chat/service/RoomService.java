@@ -2,7 +2,7 @@ package com.example.chat.service;
 
 import java.util.List;
 
-import com.example.chat.api.model.Room;
+import com.example.chat.model.Room;
 
 /**
  * TODO: RoomService

@@ -1,5 +1,6 @@
 package com.example.chat.service;
 
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 
@@ -26,6 +27,22 @@ public class SearchServiceImpl implements SearchService {
 	@Override
 	public List<ElasticsearchMessageEntity> getLastMessagesByRoomId(Long roomId) {
 		List<ElasticsearchMessageEntity> list = elasticsearchRepostiroy.findTop5ByRoomRoomIdOrderByDateTimeDesc(roomId);
+		list.sort(Comparator.comparing(ElasticsearchMessageEntity::getDateTime));
+		return list;
+	}
+
+	@Override
+	public List<ElasticsearchMessageEntity> getMessagesByRoomIdAndDatetimeBetween(Long roomId, LocalDateTime from,
+			LocalDateTime to) {
+		List<ElasticsearchMessageEntity> list = elasticsearchRepostiroy.findAllByDateTimeBetweenAndRoomRoomId(from, to,
+				roomId);
+		list.sort(Comparator.comparing(ElasticsearchMessageEntity::getDateTime));
+		return list;
+	}
+
+	@Override
+	public List<ElasticsearchMessageEntity> searchInMessage(Long roomId, String search) {
+		List<ElasticsearchMessageEntity> list = elasticsearchRepostiroy.findByMessageAndRoomRoomId(roomId, search);
 		list.sort(Comparator.comparing(ElasticsearchMessageEntity::getDateTime));
 		return list;
 	}

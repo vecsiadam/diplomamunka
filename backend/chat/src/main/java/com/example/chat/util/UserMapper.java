@@ -1,7 +1,7 @@
 package com.example.chat.util;
 
-import com.example.chat.api.model.User;
 import com.example.chat.entity.UserEntity;
+import com.example.chat.model.User;
 
 import lombok.experimental.UtilityClass;
 
