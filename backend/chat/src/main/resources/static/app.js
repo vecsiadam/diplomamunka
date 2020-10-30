@@ -80,6 +80,14 @@ function connect() {
 
 }
 
+function formatDate(date) {	
+	var second = date.getSeconds();
+	if(date.getSeconds().toString().length === 1){
+		second = "0" + date.getSeconds();
+	}
+	return (date.getFullYear() + "-" + (date.getMonth()+1)+ "-" + date.getDate() + " " + date.getHours() + ":" +date.getMinutes() + ":" + second);
+  }
+
 function setConnected(connected) {
 	$("#connect").prop("disabled", connected);
 	$("#disconnect").prop("disabled", !connected);
@@ -92,8 +100,8 @@ function setConnected(connected) {
 }
 
 function showMessages(message) {
-	console.log(message)
-	$("#messages").append("<tr><td>" + message.dateTime +": "+message.senderUser.name + ": "+ message.message + "</td></tr>");
+	//console.log(message)
+	$("#messages").append("<tr><td><b><font color='#999594'>" + formatDate(new Date(message.dateTime)) +"</font>  "+message.senderUser.name + "</b>:        "+ message.message + "</td></tr>");
 }
 
 function disconnect() {
