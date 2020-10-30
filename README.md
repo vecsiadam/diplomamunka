@@ -30,7 +30,7 @@ $ docker-compose up -d
 ```
 2. Docker container leállítása és törlése.
 ```sh
-$  docker-compose -f docker-compose_chat.yml down 
+$  docker-compose down 
 ```
 
 | Alkalmazás | Elérés |
