@@ -51,7 +51,7 @@ services:
     ports:
       - "8082:8082"
     environment:
-      CHAT_ELASTICSEARCH_URL: "http://elasticsearch:9200"
+      CHAT_ELASTICSEARCH_URL: "elasticsearch:9200"
       SPRING_KAFKA_PRODUCER_BOOTSTRAP-SERVERS: "http://kafka:9092"
       SPRING_KAFKA_ADMIN_PROPERTIES_BOOTSTRAP_SERVERS: "http://kafka:9092"
       SPRING_KAFKA_CONSUMER_BOOTSTRAP-SERVERS: "http://kafka:9092"
