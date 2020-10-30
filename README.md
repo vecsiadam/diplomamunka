@@ -5,7 +5,7 @@
 
 Spring boot alkalmazás, ami chat funkciót lát el, egy adott szobába csatlakozhatnak be a felhasználók és cseveghetnek. Részletes keresést valósít meg chat előzményben Elasticsearch segítségével. Az üzenetek küldéséhez és fogadásához Apache Kafka-t használok, valamint websocketen mennek az üzenetek.
 
-### Backend:
+### Backend:
   - Spring boot 2.3.3.RELEASE
   - Java 11
   - Maven
