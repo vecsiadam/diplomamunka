@@ -44,7 +44,7 @@ Lokálisan szükséges indítani a Chat alkalmazást, IDE segítségével.
 
 #### docker-compose_chat.yml (Elasticsearch, Kibana, Kafka, Zookeeper, Chat)
 
-1. Feltöltöttem a legfrissebb .war fájlt, amit build-eltem, hogy megkönnytsem az indítást.
+1. Feltöltöttem a legfrissebb .war fájlt, amit build-eltem, hogy megkönnyítsem az indítást.
 
 2. Docker image-t készítünk a Chat alkalmazásból.
 ```sh
@@ -75,7 +75,18 @@ http://localhost:8082/swagger-ui.html
 ```sh
 http://localhost:8082
 ```
+### Csevegési előzményben keresés, szűrés
 
+A felületre nem lett kivezetve a keresés és szűrési lehetőség ezeket REST-en lehet hívni pl:
+
+Az 1-es szobában az összes üzenet közül, azokat adja vissza amikben benne van hogy "szia":
+```sh
+http://localhost:8082/chat/search/search-in-message?roomId=1&search=szia
+```
+Az 1-es szobában az összes üzenet közül, azokat adja vissza, amik 2020-10-21 17:09:42 és 2020-11-20 17:09:42 között lettek elküldve:
+```sh
+http://localhost:8082/chat/search/search-from-to-by-date?from=2020-10-21T17%3A09%3A42.411&roomId=1&to=2020-11-20T17%3A09%3A42.411
+```
 
 **Készítette:** Vécsi Ádám - Mérnökinformatikus MSc
 
