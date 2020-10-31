@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
+import com.example.chat.entity.UserEntity;
 import com.example.chat.model.User;
 import com.example.chat.repository.UserRepository;
 import com.example.chat.util.UserMapper;
@@ -37,6 +38,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void createUser(User user) {
+		user.setNeptun(user.getNeptun().toUpperCase());
 		userRepository.save(UserMapper.userToEntity(user));
 
 	}
@@ -49,7 +51,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User getUserByNeptun(String neptun) {
-		return UserMapper.entityToUser(userRepository.findUserByNeptun(neptun.toUpperCase()));
+		String upperCaseNeptun = neptun.toUpperCase();
+		List<String> neptuns = userRepository.findAll().stream().map(UserEntity::getNeptun)
+				.collect(Collectors.toList());
+		if (!neptuns.contains(upperCaseNeptun)) {
+			return UserMapper.entityToUser(userRepository.findByUserId(5L));
+		}
+		return UserMapper.entityToUser(userRepository.findUserByNeptun(upperCaseNeptun));
 
 	}
 
