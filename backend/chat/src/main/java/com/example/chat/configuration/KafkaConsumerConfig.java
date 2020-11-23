@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 
 /**
- * TODO: KafkaConsumerConfig
+ * Configuration class for Kafka Consumer.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

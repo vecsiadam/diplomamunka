@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO: Message
+ * DTO class for messages.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

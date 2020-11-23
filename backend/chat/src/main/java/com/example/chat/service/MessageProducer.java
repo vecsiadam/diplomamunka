@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * TODO: MessageProducer
+ * This service manages to send messages in Kafka topic.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27
@@ -66,7 +66,7 @@ public class MessageProducer {
 	}
 
 	private ProducerRecord<Long, String> buildProducerRecord(Long key, String value, String kafkaTopic) {
-		return new ProducerRecord<Long, String>(kafkaTopic, null, key, value, null);
+		return new ProducerRecord<>(kafkaTopic, null, key, value, null);
 	}
 
 	private void handleSuccess(Long key, String value, SendResult<Long, String> result) {

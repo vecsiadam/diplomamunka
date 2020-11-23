@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO: Room
+ * DTO class for rooms.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

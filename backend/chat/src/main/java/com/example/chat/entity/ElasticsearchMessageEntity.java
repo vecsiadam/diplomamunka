@@ -12,7 +12,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import lombok.Data;
 
 /**
- * TODO: Message
+ * Entity class to store messages in Elasticsearch index.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

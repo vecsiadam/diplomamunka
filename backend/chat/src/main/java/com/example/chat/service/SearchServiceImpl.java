@@ -12,7 +12,7 @@ import com.example.chat.repository.MessageElasticsearchRepository;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: Mit csinál?
+ * This service manages search and filter in Elasticsearch index.
  *
  * @author Adam Vecsi
  * @date 2020-10-29

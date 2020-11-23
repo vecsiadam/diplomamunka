@@ -19,7 +19,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO: UserEntity
+ * Entity object to store users in relation database.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

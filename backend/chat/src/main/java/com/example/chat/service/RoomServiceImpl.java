@@ -12,7 +12,7 @@ import com.example.chat.util.RoomMapper;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: RoomServiceImpl
+ * This service manages room business logics.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

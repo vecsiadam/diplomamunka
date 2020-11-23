@@ -15,7 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO: RoomEntity
+ * Entity object to store rooms in relation database.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

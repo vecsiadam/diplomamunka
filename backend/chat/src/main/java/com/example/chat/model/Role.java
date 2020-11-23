@@ -1,7 +1,7 @@
 package com.example.chat.model;
 
 /**
- * TODO: Role
+ * Role enum.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

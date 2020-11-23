@@ -10,7 +10,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import com.example.chat.entity.ElasticsearchMessageEntity;
 
 /**
- * TODO: MessageRepository
+ * Repository class to store messages in Elasticsearch index.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

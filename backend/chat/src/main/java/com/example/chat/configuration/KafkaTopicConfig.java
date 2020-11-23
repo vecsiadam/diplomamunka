@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 
 /**
- * TODO: CreateTopicConfig
+ * Configuration class to create Kafka Topic.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

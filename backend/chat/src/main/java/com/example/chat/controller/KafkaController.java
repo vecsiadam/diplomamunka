@@ -15,7 +15,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: KafkaController
+ * Send message to kafka topic endpoint.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

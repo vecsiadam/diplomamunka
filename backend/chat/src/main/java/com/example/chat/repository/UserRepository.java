@@ -5,27 +5,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.chat.entity.UserEntity;
 
 /**
- * TODO: UserRepository
+ * Repository class to store users in relation database.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27
  */
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-	/**
-	 * TODO: mit is csinál?
-	 *
-	 * @param userId
-	 * @return
-	 */
 	UserEntity findByUserId(Long userId);
 
-	/**
-	 * TODO: mit is csinál?
-	 *
-	 * @param userId
-	 * @return
-	 */
 	UserEntity findUserByNeptun(String neptun);
 
 }

@@ -17,7 +17,7 @@ import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: Mit csinál?
+ * Handle search calls.
  *
  * @author Adam Vecsi
  * @date 2020-10-29

@@ -13,7 +13,7 @@ import com.example.chat.util.UserMapper;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: UserServiceImpl
+ * This service manages user business logics.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

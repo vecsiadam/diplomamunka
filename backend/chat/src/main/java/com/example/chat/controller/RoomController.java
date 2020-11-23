@@ -19,7 +19,7 @@ import com.example.chat.service.RoomService;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: MessageController
+ * Handle room calls.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

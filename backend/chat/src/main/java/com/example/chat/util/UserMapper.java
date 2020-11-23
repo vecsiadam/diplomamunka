@@ -6,7 +6,7 @@ import com.example.chat.model.User;
 import lombok.experimental.UtilityClass;
 
 /**
- * TODO: UserMapper
+ * Mapper class to convert user Entity to DTO and DTO to entity.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

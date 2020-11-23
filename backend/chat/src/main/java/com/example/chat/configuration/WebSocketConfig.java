@@ -7,7 +7,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 /**
- * TODO: Mit csinál?
+ * Configuration class for websocket.
  *
  * @author Adam Vecsi
  * @date 2020-10-28

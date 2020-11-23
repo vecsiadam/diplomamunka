@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * TODO: User
+ * DTO class for users.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

@@ -6,7 +6,7 @@ import com.example.chat.model.Room;
 import lombok.experimental.UtilityClass;
 
 /**
- * TODO: RoomMapper
+ * Mapper class to convert room Entity to DTO and DTO to entity.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

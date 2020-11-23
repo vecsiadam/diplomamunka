@@ -19,7 +19,7 @@ import com.example.chat.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 /**
- * TODO: MessageController
+ * Handle user calls.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19

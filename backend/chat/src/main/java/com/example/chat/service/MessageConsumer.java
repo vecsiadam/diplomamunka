@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * TODO: MessageConsumer
+ * This service manages to poll messages from Kafka Topic, and sending to database, elasticsearch and websocket.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

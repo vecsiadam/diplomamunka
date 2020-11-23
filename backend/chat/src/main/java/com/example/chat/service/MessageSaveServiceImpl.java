@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * TODO: MessageSaveServiceImpl
+ * This service save messages in database and Elasticsearch and send messages to websocket.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 27

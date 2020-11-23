@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 /**
- * TODO: Message
+ * Entity object to store messages in relation database.
  *
  * @author Adam Vecsi
  * @since 2020. 10. 19
