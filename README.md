@@ -1,4 +1,4 @@
-# Diplomaterv
+# Diplomamunka
 ## Oktatást segítő alkalmazás kibővítése felhasználók közötti csevegéssel és részletes kereséssel
 
 ### Feladat:
